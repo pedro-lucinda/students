@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { LoadingButton } from '@mui/lab';
 import {
   Box,
   FormControl,
@@ -14,12 +14,12 @@ import {
   SelectChangeEvent,
   TextField
 } from '@mui/material';
+import * as React from 'react';
 import { Controller, UseFormReturn } from 'react-hook-form';
-import { LoadingButton } from '@mui/lab';
 
-import { NoticeFormProps, RecipientListData } from '../types';
 import { noticeStatusList } from '@/constants';
 import { useLazyGetNoticeRecipientListQuery } from '../api';
+import { NoticeFormProps, RecipientListData } from '../types';
 
 type Props = {
   isSaving: boolean;
@@ -86,7 +86,7 @@ export const NoticeForm: React.FC<Props> = ({
         sx={{ marginTop: '20px' }}
       />
       <TextField
-        {...register('content')}
+        {...register('description')}
         error={Boolean(errors.description)}
         helperText={errors.description?.message}
         type='text'

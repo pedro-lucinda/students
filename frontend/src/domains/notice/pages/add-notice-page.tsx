@@ -1,22 +1,22 @@
-import * as React from 'react';
-import { Box, Paper, SelectChangeEvent } from '@mui/material';
-import { AddCircleOutline } from '@mui/icons-material';
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { toast } from 'react-toastify';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import { AddCircleOutline } from '@mui/icons-material';
+import { Box, Paper, SelectChangeEvent } from '@mui/material';
 import { SerializedError } from '@reduxjs/toolkit';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { PageContentHeader } from '@/components/page-content-header';
 import { getErrorMsg } from '@/utils/helpers/get-error-message';
-import { NoticeFormProps, NoticeFormSchema } from '../types';
 import { useAddNoticeMutation } from '../api/notice-api';
 import { NoticeForm } from '../components';
+import { NoticeFormProps, NoticeFormSchema } from '../types';
 
 const initialState: NoticeFormProps = {
   title: '',
-  content: '',
+  description: '',
   status: 0,
   recipientType: 'EV',
   recipientRole: 0,
